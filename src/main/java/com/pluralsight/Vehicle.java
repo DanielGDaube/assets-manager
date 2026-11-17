@@ -1,6 +1,7 @@
 package com.pluralsight;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 import java.time.LocalDate;
 
 public class Vehicle extends Assets{
@@ -69,6 +70,7 @@ public class Vehicle extends Assets{
             value = value.subtract(discount);
         }
 
+        value = value.setScale(2, RoundingMode.HALF_UP);
         return  value;
     }
 }
