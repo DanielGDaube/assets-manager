@@ -51,4 +51,17 @@ public class House extends  Assets{
         this.lotSize = lotSize;
         return this;
     }
+
+    @Override
+    public BigDecimal getValue(){
+        BigDecimal value = new BigDecimal("0.00");
+        switch (condition){
+            case 1 -> value = value.add(new BigDecimal(180.00 * squareFoot));
+            case 2 -> value = value.add(new BigDecimal(130.00 * squareFoot));
+            case 3 -> value = value.add(new BigDecimal(90.00 * squareFoot));
+            case 4 -> value = value.add(new BigDecimal(80.00 * squareFoot));
+        }
+        value = value.add(new BigDecimal(.25 * squareFoot));
+        return  value;
+    }
 }
