@@ -21,6 +21,11 @@ public class Main {
             System.out.println(asset.getDateAcquired());
             System.out.println(asset.getOriginalCost());
             System.out.println(asset.getValue());
+            if (asset instanceof House){
+                System.out.println(((House) asset).getAddress());
+            } else if (asset instanceof Vehicle) {
+                System.out.println(((Vehicle) asset).getMakeModel());
+            }
         }
 
     }
